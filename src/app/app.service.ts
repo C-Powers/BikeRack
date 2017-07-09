@@ -1,8 +1,27 @@
 import { Injectable } from '@angular/core';
+// import firebaseConfig from '../environments/firebase.config.ts';
+// import * as firebase from 'firebase';
+import { Storage } from './shared/Storage';
+import { Location } from './shared/Location';
+import { MockData } from '../assets/mock-data/MockData';
 
 export type InternalStateType = {
   [key: string]: any
 };
+
+// export type Storage = {
+//   name: string,
+//   spots: number
+// };
+
+// export type Location = {
+//   name: string,
+//   storage: Storage[]
+// };
+
+// export type AllLocationInfo = {
+//   locations: Location[]
+// };
 
 @Injectable()
 export class AppState {
@@ -42,5 +61,14 @@ export class AppState {
      * Simple object clone.
      */
     return JSON.parse(JSON.stringify( object ));
+  }
+
+  public getLocations(): Promise<Location[]> {
+    return Promise.resolve(MockData);
+  }
+
+  public getLocation(id: string): Promise<Location> {
+    return this.getLocations()
+                  .then(data => data.find(location => location.name === id))
   }
 }

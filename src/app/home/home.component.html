@@ -10,22 +10,10 @@
   <hr>
   <hr>
 
-  <div>
-    <h4>Local State</h4>
-
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-
-      <input
-        [value]="localState.value"
-        (input)="localState.value = $event.target.value"
-        placeholder="Submit Local State to App State"
-        autofocus>
-
-      <button>Submit Value</button>
-    </form>
-
-    <pre>this.localState = {{ localState | json }}</pre>
-
+  <div *ngFor="let location of locations;">
+    <div [routerLink]="['./location', location.name]">
+      {{location.name}}
+    </div>
   </div>
 
 </div>
