@@ -26,7 +26,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
-import { RackComponent } from './rack';
+import { LocationComponent } from './location';
 import { WheelAnimationComponent } from './shared/wheel-animation/';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -54,7 +54,7 @@ type StoreType = {
     AppComponent,
     AboutComponent,
     HomeComponent,
-    RackComponent,
+    LocationComponent,
     WheelAnimationComponent,
     NoContentComponent,
     XLargeDirective

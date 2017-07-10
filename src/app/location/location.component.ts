@@ -7,11 +7,11 @@ import { Location } from '../shared/Location';
 import { Storage } from '../shared/Storage';
 
 @Component({
-  selector: 'rack',
-  styleUrls: ['./rack.component.scss'],
-  templateUrl: './rack.component.html'
+  selector: 'location',
+  styleUrls: ['./location.component.scss'],
+  templateUrl: './location.component.html'
 })
-export class RackComponent implements OnInit {
+export class LocationComponent implements OnInit {
     public location: Location;
     public remainingSpots: number;
     public isCurrentlyAdmin: boolean = true;
