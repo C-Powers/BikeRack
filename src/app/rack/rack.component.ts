@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { AppState } from '../app.service';
 import { Location } from '../shared/Location';
+import { Storage } from '../shared/Storage';
 
 @Component({
   selector: 'rack',
@@ -10,8 +11,9 @@ import { Location } from '../shared/Location';
   templateUrl: './rack.component.html'
 })
 export class RackComponent implements OnInit {
-    public storage: Location;
-  
+    public location: Location;
+    public remainingSpots: number;
+
     constructor(
         public route: ActivatedRoute,
         public appState: AppState
@@ -20,11 +22,16 @@ export class RackComponent implements OnInit {
     ngOnInit(): void {
         this.route.paramMap
         .switchMap((params: ParamMap) => this.appState.getLocation(params.get('id')))
-        .subscribe((storage) => {
-            console.log('subscript storage', storage);
-            this.storage = storage;
-            console.log('this.storage in oninit', this.storage);
+        .subscribe((location) => {
+            console.log('subscript location', location);
+            this.location = location;
+            console.log('this.location in oninit', this.location);
+            this.remainingSpots = this.updateRemainingSpots(location.storage[0]);
         });
+    }
+
+    updateRemainingSpots(storage: Storage): number {
+        return storage.spots - storage.filledSpots;
     }
 
 //   public ngOnInit() {

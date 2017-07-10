@@ -1,7 +1,29 @@
-<div *ngIf="storage">
-    <h1>{{storage.name}}</h1>
-    <pre> {{storage | json}} </pre>
+<div *ngIf="location">
+
+    <h1>{{location.name}}</h1>
+
+    <div class="grid-2">
+        <div class="grid-1-of-2">
+            <div class="circle"></div>
+        </div>
+        <div class="grid-2-of-2">
+            <div class="spot-display-text">
+                <!--{{storage.storage.spots - storage.storage.spots}}-->
+                {{remainingSpots}} of {{location.storage[0].spots}} spots remain
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <pre> {{location | json}} </pre>
 </div>
-<div *ngIf="!storage">
+
+<div *ngIf="!location">
     <p> Loading... </p>
+</div>
+
+<div>
+    Are you an admin? Sign in <strong> here </strong>
 </div>
