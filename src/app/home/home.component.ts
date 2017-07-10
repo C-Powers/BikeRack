@@ -14,7 +14,7 @@ import { MockData } from '../../assets/mock-data/MockData';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
-  public BikeRackLogoPath = 'assets/img/BikeRack-logo.png'
+  public BikeRackLogoPath = 'assets/img/BikeRack-logo.png';
   public locations: Location[] = [];
 
   constructor(

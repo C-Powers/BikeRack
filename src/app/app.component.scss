@@ -1,0 +1,20 @@
+@import '../../src/styles/_variables';
+
+html, body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+/*a.active {
+  background-color: gray;
+}*/
+
+a {
+  display: hidden;
+}
+
+img.bike-rack-logo {
+    height: 50px;
+    width: auto;
+    // background-color: $dark-blue-color;
+}

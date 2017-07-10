@@ -1,0 +1,25 @@
+<nav>
+    <a [routerLink]="['./']">
+      <img class="bike-rack-logo" [src]="BikeRackLogoPath">
+    </a>
+    <!--<a [routerLink]=" ['./'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Index
+    </a>
+    <a [routerLink]=" ['./home'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Home
+    </a>
+    <a [routerLink]=" ['./about'] "
+    routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    About
+    </a>-->
+</nav>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer>
+    footer
+</footer>

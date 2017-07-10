@@ -68,7 +68,12 @@ export class AppState {
   }
 
   public getLocation(id: string): Promise<Location> {
-    return this.getLocations()
-                  .then(data => data.find(location => location.name === id))
+    console.log('id',id)
+    const result = this.getLocations()
+                  .then(data => data.find(location => location.name === id));
+    console.log('result', result);
+    return result;
+    // return this.getLocations()
+    //               .then(data => data.find(location => location.name === id))
   }
 }

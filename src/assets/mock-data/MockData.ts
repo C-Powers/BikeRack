@@ -4,7 +4,18 @@ export const MockData = [
     "storage": [
       {
         "name": "underground",
-        "spots": 20
+        "spots": 20,
+        "filledSpots": 0
+      }
+    ]
+  },
+  {
+    "name": "Test Building",
+    "storage": [
+      {
+        "name": "Test Storage 1",
+        "spots": 5,
+        "filledSpots": 2
       }
     ]
   }

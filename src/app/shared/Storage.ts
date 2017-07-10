@@ -1,4 +1,5 @@
 export type Storage = {
   name: string,
-  spots: number
+  spots: number,
+  filledSpots: number
 };

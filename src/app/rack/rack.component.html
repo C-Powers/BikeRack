@@ -1,0 +1,7 @@
+<div *ngIf="storage">
+    <h1>{{storage.name}}</h1>
+    <pre> {{storage | json}} </pre>
+</div>
+<div *ngIf="!storage">
+    <p> Loading... </p>
+</div>
