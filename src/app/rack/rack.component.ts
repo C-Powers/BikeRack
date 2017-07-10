@@ -1,6 +1,7 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { WheelAnimationComponent } from '../shared/wheel-animation/';
 import { AppState } from '../app.service';
 import { Location } from '../shared/Location';
 import { Storage } from '../shared/Storage';
@@ -13,6 +14,7 @@ import { Storage } from '../shared/Storage';
 export class RackComponent implements OnInit {
     public location: Location;
     public remainingSpots: number;
+    public isCurrentlyAdmin: boolean = true;
 
     constructor(
         public route: ActivatedRoute,

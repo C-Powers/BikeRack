@@ -6,12 +6,27 @@
         <div class="grid-1-of-2">
             <div class="circle"></div>
         </div>
-        <div class="grid-2-of-2">
+        <div class="grid-2-of-2 row-1">
             <div class="spot-display-text">
-                <!--{{storage.storage.spots - storage.storage.spots}}-->
-                {{remainingSpots}} of {{location.storage[0].spots}} spots remain
+                {{remainingSpots}} of {{location.storage[0].spots}} spots remain.
+            </div>
+            <div>
+                Updated xyz minutes ago.
             </div>
         </div>
+        <div *ngIf="isCurrentlyAdmin" class="grid-2-of-2 row-2">
+                <button> - </button>
+                <input 
+                    #updateSpotsRemainingInput
+                    (keydown.enter)="updateSpotsRemaining(updateSpotsRemainingInput.value)"
+                    value="{{location.storage[0].filledSpots}}"
+                >
+                <button> + </button>
+        </div>
+    </div>
+
+    <div>
+        Are you an admin? Sign in <strong> here </strong>
     </div>
 
     <hr>
@@ -21,9 +36,5 @@
 </div>
 
 <div *ngIf="!location">
-    <p> Loading... </p>
-</div>
-
-<div>
-    Are you an admin? Sign in <strong> here </strong>
+    <wheel-animation> </wheel-animation>
 </div>
